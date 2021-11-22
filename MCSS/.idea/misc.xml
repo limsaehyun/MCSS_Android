@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/activity_main.xml" value="0.16893115942028986" />
-        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/activity_search.xml" value="0.16893115942028986" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_border.xml" value="0.265625" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_default_border.xml" value="0.265625" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_et_search_boder.xml" value="0.265625" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_search_top_boder.xml" value="0.265625" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_text_link_border.xml" value="0.26197916666666665" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_text_version_border.xml" value="0.26197916666666665" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/activity_search.xml" value="0.2" />
       </map>
     </option>
   </component>

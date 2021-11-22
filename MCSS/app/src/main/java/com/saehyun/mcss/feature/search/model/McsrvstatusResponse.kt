@@ -1,7 +1,7 @@
 package com.saehyun.mcss.feature.search.model
 
 import com.google.gson.annotations.SerializedName
-import com.saehyun.mcss.data.data.*
+import com.saehyun.mcss.remote.data.*
 
 data class McsrvstatusResponse (
 	@SerializedName("online")val online : Boolean,

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MCSS">
-        <activity android:name=".feature.search.SearchActivity"></activity>
+        <activity android:name=".feature.search.ui.SearchActivity"></activity>
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

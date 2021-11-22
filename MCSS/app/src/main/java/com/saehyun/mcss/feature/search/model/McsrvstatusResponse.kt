@@ -1,4 +1,4 @@
-package com.saehyun.mcss.data
+package com.saehyun.mcss.feature.search.model
 
 import com.google.gson.annotations.SerializedName
 import com.saehyun.mcss.data.data.*

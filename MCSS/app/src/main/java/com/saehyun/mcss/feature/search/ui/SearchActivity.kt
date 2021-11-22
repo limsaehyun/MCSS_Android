@@ -1,4 +1,4 @@
-package com.saehyun.mcss.feature.search
+package com.saehyun.mcss.feature.search.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

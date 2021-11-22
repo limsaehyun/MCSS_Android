@@ -1,7 +1,8 @@
-package com.saehyun.mcss
+package com.saehyun.mcss.feature.search
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.saehyun.mcss.R
 
 class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -9,8 +9,9 @@
         <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_search_top_boder.xml" value="0.265625" />
         <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_text_link_border.xml" value="0.26197916666666665" />
         <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_text_version_border.xml" value="0.26197916666666665" />
-        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/activity_search.xml" value="0.2" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/activity_main.xml" value="0.24210526315789474" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/activity_search.xml" value="0.11937716262975778" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/item_view.xml" value="0.1265625" />
       </map>
     </option>
   </component>

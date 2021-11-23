@@ -1,0 +1,1 @@
+val MC_BASE_URL = "http://api.mcsrvstat.us/"

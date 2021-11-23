@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.190625" />
         <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_border.xml" value="0.265625" />
         <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_default_border.xml" value="0.265625" />
         <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_et_search_boder.xml" value="0.265625" />

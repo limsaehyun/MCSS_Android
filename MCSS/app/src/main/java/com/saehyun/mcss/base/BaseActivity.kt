@@ -23,4 +23,5 @@ abstract class BaseActivity<B: ViewDataBinding> (
     fun showToast(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
+
 }

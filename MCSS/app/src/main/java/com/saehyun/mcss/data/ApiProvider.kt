@@ -1,7 +1,7 @@
 package com.saehyun.mcss.data
 
 import MC_BASE_URL
-import com.saehyun.mcss.data.Search.SearchApi
+import com.saehyun.mcss.data.search.SearchApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

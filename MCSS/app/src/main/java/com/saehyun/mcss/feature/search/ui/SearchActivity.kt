@@ -21,8 +21,8 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>(
 
         searchViewModel.serverInfo("Limez.kr")
 
-        searchViewModel.toastMessage.observe(this, {
-            showToast("${it}")
-        })
+//        searchViewModel.toastMessage.observe(this, {
+//            showToast("${it}")
+//        })
     }
 }

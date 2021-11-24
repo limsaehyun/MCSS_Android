@@ -18,10 +18,17 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding.imageView2.setOnClickListener {
-            val intent = Intent(applicationContext, SearchActivity::class.java)
-            intent.putExtra("serverIp", binding.imageView.text.toString())
-            startActivity(intent)
+        binding.ibMainSearch.setOnClickListener {
+            val serverIp = binding.imageView.text.toString()
+
+            if(serverIp.isNotEmpty() && serverIp.contains(".")) {
+                val intent = Intent(applicationContext, SearchActivity::class.java)
+                intent.putExtra("server", serverIp)
+                startActivity(intent)
+            }
+            else {
+                showToast("올바른 서버 주소를 입력해주세요.")
+            }
         }
     }
 

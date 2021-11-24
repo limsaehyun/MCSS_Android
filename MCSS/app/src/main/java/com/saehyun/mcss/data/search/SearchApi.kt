@@ -1,15 +1,16 @@
 package com.saehyun.mcss.data.search
 
-import com.saehyun.mcss.feature.search.model.McsrvstatusResponse
+import ServerResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface SearchApi {
     
-    @GET("2/{server-ip}")
+    @GET("server/status")
     suspend fun serverInfo(
-        @Path("server-ip") serverIp: String
-    ) : Response<McsrvstatusResponse>
+        @Query("ip") serverIp: String
+    ) : Response<ServerResponse>
 
 }

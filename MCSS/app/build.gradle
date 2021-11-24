@@ -32,14 +32,21 @@ android {
     }
 
     dataBinding {
+        //noinspection DataBindingWithoutKapt
         enabled = true
     }
 }
 
 dependencies {
 
-    //koin
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
+
     def koin_version = "2.1.6"
+
+    //koin
     implementation "org.koin:koin-core:$koin_version"
     implementation "org.koin:koin-androidx-scope:$koin_version"
     implementation "org.koin:koin-android:$koin_version"

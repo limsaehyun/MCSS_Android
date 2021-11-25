@@ -6,7 +6,7 @@
     <data>
         <variable
             name="activity"
-            type="com.saehyun.mcss.ui.MainActivity" />
+            type="com.saehyun.mcss.main.MainActivity" />
 
     </data>
 
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#B0DBE4"
-        tools:context=".ui.MainActivity">
+        tools:context=".main.MainActivity">
 
         <TextView
             android:id="@+id/textView"
@@ -117,7 +117,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-        <ImageView
+        <ImageButton
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
             android:id="@+id/ibBookMark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

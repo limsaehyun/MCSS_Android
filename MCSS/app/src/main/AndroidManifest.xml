@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MCSS">
         <activity android:name=".feature.search.ui.SearchActivity"/>
-        <activity android:name=".ui.MainActivity"
+        <activity android:name=".main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

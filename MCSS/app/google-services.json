@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "885094401323",
+    "project_id": "mcss-361a3",
+    "storage_bucket": "mcss-361a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885094401323:android:74ba09277d762e931f316e",
+        "android_client_info": {
+          "package_name": "com.saehyun.mcss"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885094401323-fhql93gvlgs69gmjegb6sb7l3j46qi8q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs-MWULBKlbyTz55iY0pJvoU-fzdFDR3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885094401323-fhql93gvlgs69gmjegb6sb7l3j46qi8q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

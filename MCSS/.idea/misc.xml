@@ -4,15 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.190625" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_bookmark_add_border.xml" value="0.14375" />
         <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_border.xml" value="0.265625" />
         <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_default_border.xml" value="0.265625" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_et_bookmark_add_boder.xml" value="0.265625" />
         <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_et_search_boder.xml" value="0.265625" />
         <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_search_top_boder.xml" value="0.265625" />
         <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_text_link_border.xml" value="0.26197916666666665" />
         <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/drawable/bg_text_version_border.xml" value="0.26197916666666665" />
         <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/activity_main.xml" value="0.24210526315789474" />
-        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/activity_search.xml" value="0.11937716262975778" />
-        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/item_view.xml" value="0.1265625" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/activity_search.xml" value="0.136" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/bookMarkAdd.xml" value="0.12760416666666666" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/bookmark_add.xml" value="0.264" />
+        <entry key="..\:/MCSS_Android/MCSS/app/src/main/res/layout/item_view.xml" value="0.4" />
+        <entry key="..\:/Users/user/.gradle/caches/transforms-2/files-2.1/2b06f2f938cd2497eae083fc57b1d572/core-1.7.0/res/layout/custom_dialog.xml" value="0.24947916666666667" />
       </map>
     </option>
   </component>

@@ -1,4 +1,11 @@
 package com.saehyun.mcss.main
 
-class MainViewModel {
+import androidx.lifecycle.ViewModel
+import com.saehyun.mcss.data.search.SearchRepository
+
+class MainViewModel(
+    val repository: SearchRepository
+    ) : ViewModel() {
+
+
 }

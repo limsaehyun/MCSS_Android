@@ -1,4 +1,4 @@
-package com.saehyun.mcss.main
+package com.saehyun.mcss
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -17,18 +17,18 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        setContentView(binding.root)
+        setContentView(binding.root)
 
-//        val navView: BottomNavigationView = binding.navView
-//
-//        val navController = findNavController(R.id.nav_host_fragment_activity_home)
-//
-//        val appBarConfiguration = AppBarConfiguration(
-//            setOf(
-//                R.id.navigation_home, R.id.navigation_list
-//            )
-//        )
-//
-//        navView.setupWithNavController(navController)
+        val navView: BottomNavigationView = binding.navView
+
+        val navController = findNavController(R.id.nav_host_fragment_activity_home)
+
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_home, R.id.navigation_list
+            )
+        )
+
+        navView.setupWithNavController(navController)
     }
 }

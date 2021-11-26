@@ -24,10 +24,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
 
     private var bookMarkData = arrayListOf<BookMarkData>()
 
-    var firestore : FirebaseFirestore?= null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
         binding.ibMainSearch.setOnClickListener {
             val serverIp = binding.imageView.text.toString()

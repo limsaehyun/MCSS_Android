@@ -1,17 +1,17 @@
-package com.saehyun.mcss.main.ui.list
+package com.saehyun.mcss.feature.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import com.saehyun.mcss.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
 
-    private var _binding: FragmentListBinding ?= null
-
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentListBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,14 +19,11 @@ class ListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentListBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        binding = FragmentListBinding.inflate(inflater, container, false)
 
-        return root
-    }
+        binding.wvList.webViewClient = WebViewClient()
+        binding.wvList.loadUrl("https://minelist.kr")
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        return binding.root
     }
 }

@@ -5,11 +5,9 @@ import android.content.Context
 import android.view.Window
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import com.saehyun.mcss.R
-import android.widget.Button as Button1
 
 
 class CustomDialog(context: Context) {
@@ -54,19 +52,4 @@ class CustomDialog(context: Context) {
 
         dlg.show()
     }
-//
-//    fun setOnOkClickedListener(listener: (String) -> Unit) {
-//        this.listener = object : CustomDialogOKClickedListener {
-//            override fun onOkCliked(content: String) {
-//                listener(content)
-//            }
-//        }
-//    }
-//
-//    interface CustomDialogOKClickedListener {
-//        fun onOkCliked(content: String)
-//    }
-//
-
-
 }

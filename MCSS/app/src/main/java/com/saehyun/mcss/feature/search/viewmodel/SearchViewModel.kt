@@ -15,14 +15,11 @@ class SearchViewModel(
     val serverData: MutableLiveData<ServerResponse> = MutableLiveData()
 
     fun serverInfo(serverId: String) {
-        viewModelScope.launch {
-            val response = repository.serverInfo(serverId)
-
+        repository.serverInfo(serverId).subscribe { response ->
             if(response.isSuccessful) {
                 serverData.value = response.body()
-                toastMessage.value = "성공" + response.code().toString()
             } else {
-                toastMessage.value = "실패"
+                toastMessage.value = "error!"
             }
         }
     }

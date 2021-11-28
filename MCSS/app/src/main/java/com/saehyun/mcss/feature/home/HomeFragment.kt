@@ -10,25 +10,25 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.saehyun.mcss.R
+import com.saehyun.mcss.base.BaseFragment
 import com.saehyun.mcss.databinding.FragmentHomeBinding
 import com.saehyun.mcss.feature.bookmark.BookMarkData
 import com.saehyun.mcss.feature.bookmark.CustomDialog
 import com.saehyun.mcss.feature.bookmark.MainAdapter
 import com.saehyun.mcss.feature.search.ui.SearchActivity
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(
+    R.layout.fragment_home
+) {
 
     private var bookMarkData = arrayListOf<BookMarkData>()
-    private lateinit var binding : FragmentHomeBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initView()
+    }
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
-
+    private fun initView() {
         binding.ibMainSearch.setOnClickListener {
             val serverIp = binding.imageView.text.toString()
 
@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
                 startActivity(intent)
             }
             else {
-                Toast.makeText(context, "올바른 서버 주소를 입력해주세요.", Toast.LENGTH_SHORT).show()
+                showToast("올바른 서버 주소를 입력해주세요.")
             }
         }
 
@@ -47,27 +47,24 @@ class HomeFragment : Fragment() {
         binding.rvMainBookMark.adapter= context?.let { MainAdapter(it, bookMarkData) }
 
         binding.ibBookMark.setOnClickListener {
-            var name: String = "default"
-            var domain: String = "default"
+            var hname: String = "default"
+            var hdomain: String = "default"
 
-            val dlg = context?.let { it1 -> CustomDialog(it1) }!!
+            CustomDialog(requireContext()).run {
+                name.observe(viewLifecycleOwner, {
+                    hname = it
+                })
+                domain.observe(viewLifecycleOwner, {
+                    hdomain = it
+                })
+                success.observe(viewLifecycleOwner, {
+                    bookMarkData.add(BookMarkData(hname, hdomain))
 
-            dlg.name.observe(viewLifecycleOwner, {
-                name = it
-            })
-            dlg.domain.observe(viewLifecycleOwner, {
-                domain = it
-            })
-            dlg.success.observe(viewLifecycleOwner, {
-                bookMarkData.add(BookMarkData(name, domain))
-
-                binding.rvMainBookMark.adapter?.notifyDataSetChanged()
-            })
-
-            dlg.start()
+                    binding.rvMainBookMark.adapter?.notifyDataSetChanged()
+                })
+                start()
+            }
         }
-
-        return binding.root
     }
 
     override fun onResume() {
@@ -75,4 +72,6 @@ class HomeFragment : Fragment() {
 
         binding.rvMainBookMark.adapter?.notifyDataSetChanged()
     }
+
+    override fun observeEvent() {}
 }

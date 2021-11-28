@@ -27,8 +27,8 @@ MCSS는 쉽고 빠른 마인크래프트 서버 검색 서비스입니다.
 - minSdkVersion : 28
 - targetSdkVersion : 31
 
-## Libraris
-- RxAndroid, RxJava, Koin, Retrofit2, OkHttp, AAC, Glide
+## Skills
+- RxAndroid, RxJava, Koin, Retrofit2, OkHttp, MVVM, AAC, Glide
 
 ## screenshot
 <img src="https://user-images.githubusercontent.com/80076029/143768662-036ebee1-c72a-4032-be7c-d7c008249788.png" width="180px" height="380px" title="Main" alt="메인"></img>

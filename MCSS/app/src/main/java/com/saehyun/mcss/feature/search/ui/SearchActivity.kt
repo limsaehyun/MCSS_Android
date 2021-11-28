@@ -20,7 +20,7 @@ import android.view.View
 class SearchActivity : BaseActivity<ActivitySearchBinding>(
     R.layout.activity_search
 ) {
-    private val TAG = "SearchActivity"
+
     val searchViewModel: SearchViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {

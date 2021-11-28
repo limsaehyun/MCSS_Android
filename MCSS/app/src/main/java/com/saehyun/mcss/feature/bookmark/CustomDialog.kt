@@ -20,7 +20,6 @@ class CustomDialog(context: Context) {
     var name: MutableLiveData<String> = MutableLiveData()
     var domain: MutableLiveData<String> = MutableLiveData()
     var success: MutableLiveData<Boolean> = MutableLiveData()
-//    private lateinit var listener: CustomDialogOKClickedListener
 
     fun start() {
         dlg.requestWindowFeature(Window.FEATURE_NO_TITLE)   //타이틀바 제거

@@ -39,6 +39,23 @@ android {
 
 dependencies {
 
+    //rxAndroid
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+
+    //rxjava
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.3'
+    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+
+    //rxkotlin
+    implementation("io.reactivex.rxjava2:rxkotlin:2.4.0")
+
+    //rx
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation("com.uber.rxdogtag2:rxdogtag:2.0.1")
+    implementation 'me.relex:circleindicator:2.1.4'
+    implementation 'com.jakewharton.rxbinding4:rxbinding-material:4.0.0'
+
+
     implementation 'com.google.code.gson:gson:2.8.8'
 
     implementation 'com.squareup.picasso:picasso:2.71828'

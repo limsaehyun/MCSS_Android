@@ -9,30 +9,31 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
 import com.saehyun.mcss.R
 
-abstract class BaseFragment<T : ViewDataBinding>(
-    @LayoutRes private val layoutResId : Int
-    ) : Fragment() {
-
-    private var _binding : T? = null
-
-    val binding get() = _binding ?: error("View를 참조하기 위해 binding이 초기화되지 않았습니다.")
+abstract class BaseFragment<B : ViewDataBinding>(
+    @LayoutRes private val layoutRes: Int
+) : Fragment() {
+    protected lateinit var binding: B
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = DataBindingUtil.inflate(inflater, layoutResId, container, false)
-        binding.lifecycleOwner = viewLifecycleOwner
+        binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.lifecycleOwner = this
+
+        observeEvent()
     }
+
+    abstract fun observeEvent()
 
     fun showToast(msg: String) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()

@@ -7,23 +7,26 @@ import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
+import com.saehyun.mcss.R
+import com.saehyun.mcss.base.BaseFragment
 import com.saehyun.mcss.databinding.FragmentListBinding
 
-class ListFragment : Fragment() {
+class ListFragment : BaseFragment<FragmentListBinding>(
+    R.layout.fragment_list
+) {
 
-    private lateinit var binding: FragmentListBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+    override fun onViewCreated(
+        view: View,
         savedInstanceState: Bundle?
-    ): View? {
+    ) {
+        initView()
+    }
 
-        binding = FragmentListBinding.inflate(inflater, container, false)
-
+    private fun initView() {
         binding.wvList.webViewClient = WebViewClient()
         binding.wvList.loadUrl("https://minelist.kr")
-
-        return binding.root
     }
+
+    override fun observeEvent() {}
 }

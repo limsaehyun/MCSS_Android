@@ -30,4 +30,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
 
         navView.setupWithNavController(navController)
     }
+
+    override fun observeEvent() {}
 }

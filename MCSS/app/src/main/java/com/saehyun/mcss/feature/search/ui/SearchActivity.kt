@@ -26,9 +26,6 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val serverIp = intent.getStringExtra("server")
-
-
         binding.ibSearch.setOnClickListener {
             val serverIp = binding.etSearch.text.toString()
 
@@ -41,51 +38,58 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>(
                 showToast("올바른 서버 주소를 입력해주세요.")
             }
         }
+    }
 
-        searchViewModel.serverInfo(serverIp.toString())
+    override fun observeEvent() {
+        val serverIp = intent.getStringExtra("server")
 
-        searchViewModel.toastMessage.observe(this, {
-            showToast("${it}")
-        })
+        searchViewModel.run {
+            serverInfo(serverIp.toString())
 
-        searchViewModel.serverData.observe(this, {
-            binding.pb.visibility = View.GONE
+            toastMessage.observe(this@SearchActivity, {
+                showToast(it)
+            })
 
-            if(it.status == "success") {
-                if(!(it.favicon.isNullOrEmpty())) {
-                    var encodedDataString: String = it.favicon
+            serverData.observe(this@SearchActivity, {
+                binding.pb.visibility = View.GONE
 
-                    encodedDataString = encodedDataString.replace("data:image/png;base64,", "")
+                it.run {
+                    if(status == "success") {
+                        if(!(favicon.isNullOrEmpty())) {
+                            var encodedDataString: String = favicon
 
-                    val imageAsBytes: ByteArray = Base64.decode(encodedDataString.toByteArray(), 0)
-                    binding.ivServerImage.setImageBitmap(
-                        BitmapFactory.decodeByteArray(
-                            imageAsBytes, 0, imageAsBytes.size
-                        )
-                    )
+                            encodedDataString = encodedDataString.replace("data:image/png;base64,", "")
+
+                            val imageAsBytes: ByteArray = Base64.decode(encodedDataString.toByteArray(), 0)
+                            binding.ivServerImage.setImageBitmap(
+                                BitmapFactory.decodeByteArray(
+                                    imageAsBytes, 0, imageAsBytes.size
+                                )
+                            )
+                        }
+
+                        if(online) {
+                            binding.ivSearchStatus.setImageResource(R.drawable.ic_online)
+                        } else {
+                            binding.ivSearchStatus.setImageResource(R.drawable.ic_offline)
+                        }
+
+                        var motdLength = motd.length
+
+                        if(motdLength >= 16 ) {
+
+                        }
+                        binding.tvServerMotd.text = motd
+                        binding.tvServerVersion.text = server.name
+                        binding.tvServerLink.text = serverIp
+
+                        binding.tvSearchPersonnel.text = "${it.players.now} / ${it.players.max}"
+                    } else {
+                        showToast("도메인 주소가 올바르지 않습니다!")
+                    }
                 }
 
-                if(it.online) {
-                    binding.ivSearchStatus.setImageResource(R.drawable.ic_online)
-                } else {
-                    binding.ivSearchStatus.setImageResource(R.drawable.ic_offline)
-                }
-
-                var motdLength = it.motd.length
-
-                if(motdLength >= 16 ) {
-
-                }
-                binding.tvServerMotd.text = it.motd
-
-                binding.tvServerVersion.text = it.server.name
-                binding.tvServerLink.text = serverIp
-
-                binding.tvSearchPersonnel.text = "${it.players.now} / ${it.players.max}"
-            } else {
-                showToast("도메인 주소가 올바르지 않습니다!")
-            }
-
-        })
+            })
+        }
     }
 }

@@ -33,7 +33,6 @@ class CustomDialog(context: Context) {
         tvAdd = dlg.findViewById(R.id.tvAdd)
         tvAdd.setOnClickListener {
 
-//            listener.onOkCliked("OK")
             if(etSrvName.text.isNotEmpty() || etSrvDomain.text.isNotEmpty())  {
                 name.value = etSrvName.text.toString()
                 domain.value = etSrvDomain.text.toString()

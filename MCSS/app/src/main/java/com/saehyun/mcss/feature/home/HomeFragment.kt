@@ -29,40 +29,42 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
     }
 
     private fun initView() {
-        binding.ibMainSearch.setOnClickListener {
-            val serverIp = binding.imageView.text.toString()
+        binding.run {
+            ibMainSearch.setOnClickListener {
+                val serverIp = imageView.text.toString()
 
-            if(serverIp.isNotEmpty() && serverIp.contains(".")) {
-                val intent = Intent(context, SearchActivity::class.java)
-                intent.putExtra("server", serverIp)
-                startActivity(intent)
+                if(serverIp.isNotEmpty() && serverIp.contains(".")) {
+                    val intent = Intent(context, SearchActivity::class.java)
+                    intent.putExtra("server", serverIp)
+                    startActivity(intent)
+                }
+                else {
+                    showToast("올바른 서버 주소를 입력해주세요.")
+                }
             }
-            else {
-                showToast("올바른 서버 주소를 입력해주세요.")
-            }
-        }
 
-        binding.rvMainBookMark.layoutManager= GridLayoutManager(context, 2)
-        binding.rvMainBookMark.setHasFixedSize(true)
-        binding.rvMainBookMark.adapter= context?.let { MainAdapter(it, bookMarkData) }
+            rvMainBookMark.layoutManager= GridLayoutManager(context, 2)
+            rvMainBookMark.setHasFixedSize(true)
+            rvMainBookMark.adapter= context?.let { MainAdapter(it, bookMarkData) }
 
-        binding.ibBookMark.setOnClickListener {
-            var hname: String = "default"
-            var hdomain: String = "default"
+            ibBookMark.setOnClickListener {
+                var hname: String = "default"
+                var hdomain: String = "default"
 
-            CustomDialog(requireContext()).run {
-                name.observe(viewLifecycleOwner, {
-                    hname = it
-                })
-                domain.observe(viewLifecycleOwner, {
-                    hdomain = it
-                })
-                success.observe(viewLifecycleOwner, {
-                    bookMarkData.add(BookMarkData(hname, hdomain))
+                CustomDialog(requireContext()).run {
+                    name.observe(viewLifecycleOwner, {
+                        hname = it
+                    })
+                    domain.observe(viewLifecycleOwner, {
+                        hdomain = it
+                    })
+                    success.observe(viewLifecycleOwner, {
+                        bookMarkData.add(BookMarkData(hname, hdomain))
 
-                    binding.rvMainBookMark.adapter?.notifyDataSetChanged()
-                })
-                start()
+                        rvMainBookMark.adapter?.notifyDataSetChanged()
+                    })
+                    start()
+                }
             }
         }
     }

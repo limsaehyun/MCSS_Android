@@ -24,8 +24,10 @@ class ListFragment : BaseFragment<FragmentListBinding>(
     }
 
     private fun initView() {
-        binding.wvList.webViewClient = WebViewClient()
-        binding.wvList.loadUrl("https://minelist.kr")
+        binding.run {
+            wvList.webViewClient = WebViewClient()
+            wvList.loadUrl("https://minelist.kr")
+        }
     }
 
     override fun observeEvent() {}

@@ -21,7 +21,7 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>(
     R.layout.activity_search
 ) {
 
-    val searchViewModel: SearchViewModel by viewModel()
+    val vm: SearchViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +43,7 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>(
     override fun observeEvent() {
         val serverIp = intent.getStringExtra("server")
 
-        searchViewModel.run {
+        vm.run {
             serverInfo(serverIp.toString())
 
             toastMessage.observe(this@SearchActivity, {
